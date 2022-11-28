@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>PassGen-JS</title>
+    <title>PassGen-JS!</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style/main.css'>
-    <script src='scirpts/main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/bootstrap.min.css'>
+    <script src='scripts/main.js'></script>
 </head>
+
 <body>
-    <div class="Window">Hello World!</div>
+    <div id="content" class="container border w-25 " style="padding: 20px;">
+        <div>
+            <h1>PassGen-JS</h1>
+        </div>
+        <div>Please choose character types for your password:</div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" role="switch" type="checkbox" id="Letters" name="Letters" checked />
+            <label class="form-check-label" for="Letters">Letters</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" role="switch" type="checkbox" id="Numbers" name="Numbers" checked />
+            <label class="form-check-label" for="Numbers">Numbers</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" role="switch" type="checkbox" id="Symbols" name="Symbols" checked />
+            <label class="form-check-label" for="Symbols">Symbols</label>
+        </div>
+        <div class="instructions">Do you want similar looking characters to be included?</div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="Similar" name="Similar">
+            <label class="form-check-label" for="Similar">Similar</label>
+        </div>
+        <div class="input_box">
+            <label class="form-label" for="length_slider">Choose Password Length: <span
+                    id="length_text"><b>8</b></span></label>
+            <input class="form-range" oninput="updateRangeValue(this.value)" id="length_slider" type="range" min="3"
+                max="50" step="1" value="8" />
+
+        </div>
+        <div style="margin-bottom: 20px;">
+            <input type="button" onclick="generatePassword()" value="Generate Password">
+        </div>
+        <div>
+            <label class="form-label" for="password">Your new password:</label>
+            <input class="form-control form-control-sm" type="text" id="password" name="password" disabled>
+        </div>
+
+    </div>
 </body>
+
 </html>
