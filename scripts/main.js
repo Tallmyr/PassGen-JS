@@ -12,6 +12,8 @@ function generatePassword(){
     let symbols = document.getElementById("Symbols").checked
     let similar = document.getElementById("Similar").checked
 
+    let length = document.getElementById("length_slider").value
 
     
+
 }
